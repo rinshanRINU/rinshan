@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" fill="none">
+  <path d="M12 10H28C34.6274 10 40 15.3726 40 22C40 28.6274 34.6274 34 28 34H20V38H12V10ZM20 26H28C30.2091 26 32 24.2091 32 22C32 19.7909 30.2091 18 28 18H20V26Z" fill="#FFFFFF"/>
+  <path d="M28 26L38 38H48L37 25C43 23 46 18 45 12" stroke="#FF4D1F" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="48" cy="14" r="3" fill="#FF4D1F"/>
+  <text x="62" y="30" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" letter-spacing="3" fill="#FFFFFF">RINSHAAN</text>
+  <text x="63" y="40" font-family="'Inter', monospace" font-size="8" font-weight="500" letter-spacing="4" fill="#888888">MOTION &amp; EDIT</text>
+</svg>

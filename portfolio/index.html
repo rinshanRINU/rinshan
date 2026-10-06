@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Basics -->
+  <title>Rinshaan — Cinematic Creative Director &amp; Motion Designer | Kerala • Dubai • Abu Dhabi</title>
+  <meta name="description" content="Portfolio of Rinshaan — Elite Motion Graphics Artist, Commercial Film Director, and Video Editor crafting visceral cinematic stories across Kerala, Dubai, and Abu Dhabi." />
+  <meta name="keywords" content="Rinshaan, Video Editor, Motion Graphics, Film Director, Commercial Editor, DaVinci Resolve, Cinema 4D, Kerala, Dubai, Abu Dhabi, GCC" />
+  <meta name="author" content="Rinshaan" />
+  
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rinshaan.com/" />
+  <meta property="og:title" content="Rinshaan — Cinematic Creative Director &amp; Film Editor" />
+  <meta property="og:description" content="I make motion that moves people. Commercial directing, rhythmic video editing, and brutalist 3D kinetic design." />
+  <meta property="og:image" content="assets/showreel.png" />
+  <meta property="og:site_name" content="Rinshaan Portfolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rinshaan — Cinematic Creative Director &amp; Film Editor" />
+  <meta name="twitter:description" content="I make motion that moves people. Commercial directing, video editing, and 3D kinetic design." />
+  <meta name="twitter:image" content="assets/showreel.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+
+  <!-- Typography: Space Grotesk (Titles), Geist (Body), JetBrains Mono (Metadata) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS for utility styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#ff4d1f",
+            "primary-container": "#ff562c",
+            "primary-dim": "#ffb4a2",
+            "secondary": "#eeeeee",
+            "secondary-muted": "#c6c6c7",
+            "surface-void": "#0a0a0a",
+            "surface-lowest": "#0e0e0e",
+            "surface-base": "#131313",
+            "surface-low": "#1c1b1b",
+            "surface-card": "#181818",
+            "surface-container": "#201f1f",
+            "surface-high": "#2a2a2a",
+            "surface-highest": "#353534"
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- 00. SCROLL PROGRESS BAR -->
+  <div id="scroll-progress" class="scroll-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- 01. CUSTOM CINEMATIC CURSOR -->
+  <div id="cursor-dot" class="cursor-dot"></div>
+  <div id="cursor-ring" class="cursor-ring"><span>VIEW</span></div>
+
+  <!-- 02. SHORT PRELOADER SLATE -->
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <div class="preloader-header">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        <span class="technical-code text-white">REEL_CALIBRATION_STAGE // 01</span>
+      </div>
+      <span class="technical-code text-white">4K UHD • 23.976 FPS</span>
+    </div>
+
+    <div class="preloader-center">
+      <div class="label-caps text-primary tracking-widest mb-2">AUTEUR REEL • VOL. IV</div>
+      <div id="preloader-counter" class="preloader-counter">0%</div>
+      <div class="preloader-bar-track">
+        <div id="preloader-bar-fill" class="preloader-bar-fill"></div>
+      </div>
+    </div>
+
+    <div class="preloader-footer">
+      <span class="technical-code">RINSHAAN • KERALA / DUBAI</span>
+      <span class="technical-code">INITIALIZING CINEMA SHADER...</span>
+    </div>
+  </div>
+
+  <!-- 03. SITE HEADER & NAVIGATION -->
+  <header id="site-header" class="site-header">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="header-brand" aria-label="Rinshaan Home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" fill="none" class="h-8 w-auto">
+          <path d="M12 10H28C34.6274 10 40 15.3726 40 22C40 28.6274 34.6274 34 28 34H20V38H12V10ZM20 26H28C30.2091 26 32 24.2091 32 22C32 19.7909 30.2091 18 28 18H20V26Z" fill="#FFFFFF"/>
+          <path d="M28 26L38 38H48L37 25C43 23 46 18 45 12" stroke="#FF4D1F" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="48" cy="14" r="3" fill="#FF4D1F"/>
+          <text x="62" y="30" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" letter-spacing="3" fill="#FFFFFF">RINSHAAN</text>
+          <text x="63" y="40" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" letter-spacing="4" fill="#888888">MOTION &amp; EDIT</text>
+        </svg>
+        <span class="label-caps text-secondary-muted hidden sm:inline-block">Auteur Reel • Vol. IV</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#showreel" class="nav-link">Showreel</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Status & CTA -->
+      <div class="flex items-center gap-4">
+        <div class="header-status-badge hidden xl:flex">
+          <span class="status-dot-pulse"></span>
+          <span class="technical-code text-secondary-muted">Kerala • Open to Dubai &amp; Abu Dhabi</span>
+        </div>
+
+        <div class="magnetic-wrap hidden sm:inline-block">
+          <a href="#contact" class="btn-primary">
+            <span>Get in Touch</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="nav-mobile-toggle" class="nav-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-list">
+      <a href="#work" class="mobile-nav-item">01 // Work</a>
+      <a href="#services" class="mobile-nav-item">02 // Services</a>
+      <a href="#showreel" class="mobile-nav-item">03 // Showreel</a>
+      <a href="#about" class="mobile-nav-item">04 // About</a>
+      <a href="#contact" class="mobile-nav-item">05 // Contact</a>
+    </div>
+
+    <div class="flex flex-col gap-4 pt-6 border-t border-hairline">
+      <div class="technical-code text-secondary-muted">AVAILABLE WORLDWIDE • KERALA &amp; GCC</div>
+      <a href="#contact" class="btn-primary w-full text-center">Transmit Inquiry</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- =====================================================================
+         04. HERO SECTION WITH INTERACTIVE WEBGL SHADER
+         ===================================================================== -->
+    <section id="hero" class="hero-section">
+      <!-- High-res Visual Backdrop -->
+      <img src="assets/project-1.jpg" alt="Cyberpunk atmospheric cinema background" class="hero-backdrop-img" loading="eager" />
+      
+      <!-- WebGL Fluid Mist & Dust Particles Canvas (Screen 5 Shader) -->
+      <div class="shader-container">
+        <canvas id="hero-shader-canvas" class="shader-canvas"></canvas>
+      </div>
+
+      <!-- Scrims & Glows -->
+      <div class="hero-vignette"></div>
+      <div class="hero-glow-1"></div>
+      <div class="hero-glow-2"></div>
+
+      <!-- Hero Foreground Elements -->
+      <div class="hero-content-wrap">
+        <!-- Top Status Ribbon -->
+        <div class="hero-top-ribbon">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-card/80 border border-hairline backdrop-blur-md max-w-full">
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0"></span>
+            <span class="technical-code text-secondary text-[11px] sm:text-[12px]"><span class="sm:hidden">Available • Kerala &amp; GCC</span><span class="hidden sm:inline">Available for Commission • Kerala / Dubai &amp; Abu Dhabi</span></span>
+          </div>
+
+          <div class="flex items-center gap-3 sm:gap-4 text-secondary-muted">
+            <span class="technical-code tracking-widest hidden md:inline-block">LOC: 9.9312° N, 76.2673° E</span>
+            <div class="h-3 w-[1px] bg-surface-high hidden md:block"></div>
+            <span class="technical-code tracking-widest text-primary text-[11px] sm:text-[12px]">SCENE 01 / TAKE 04</span>
+          </div>
+        </div>
+
+        <!-- Headline Epicenter (Line by line reveal) -->
+        <div class="hero-headline-wrap">
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            <span class="label-caps text-primary tracking-[0.2em] sm:tracking-[0.25em]">Auteur Reel • Vol. IV</span>
+            <div class="w-8 sm:w-12 h-[1px] bg-primary/40"></div>
+            <span class="technical-code text-secondary-muted text-[11px]">2.39:1 ANAMORPHIC</span>
+          </div>
+
+          <h1 class="hero-headline" aria-label="I Make Motion That Moves People">
+            <div class="hero-line-mask">
+              <span class="hero-headline-line">I MAKE MOTION THAT</span>
+            </div>
+            <div class="hero-line-mask">
+              <span class="hero-headline-line"><span class="gradient-text">MOVES PEOPLE.</span></span>
+            </div>
+          </h1>
+
+          <p class="hero-roles technical-code uppercase tracking-wider text-secondary-muted text-[11px] sm:text-[12px]">
+            Video Editor / Motion Graphics Artist / Graphic Designer / Videographer
+          </p>
+
+          <!-- CTAs with Magnetic Pull -->
+          <div class="hero-cta-cluster">
+            <div class="magnetic-wrap">
+              <a href="#showreel" class="btn-primary" data-video-modal="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1">
+                <span class="w-2.5 h-2.5 rounded-full bg-black"></span>
+                <span>Watch 2025 Showreel (01:42)</span>
+                <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+              </a>
+            </div>
+
+            <div class="magnetic-wrap">
+              <a href="#work" class="btn-ghost">
+                <span>Explore Selected Work</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Bottom Bar -->
+        <div class="hero-bottom-ribbon">
+          <div class="hidden sm:flex items-center gap-2 technical-code text-secondary-muted">
+            <span class="text-primary font-bold">TC</span>
+            <span>00:00:00:<span id="hero-tc-ms">18</span></span>
+            <span class="text-surface-highest">/</span>
+            <span>00:01:42:18</span>
+          </div>
+
+          <div class="scroll-indicator-pill">
+            <span class="label-caps text-secondary-muted">Scroll to explore</span>
+            <div class="mouse-scroll-icon">
+              <div class="mouse-scroll-dot"></div>
+            </div>
+          </div>
+
+          <div class="hidden md:flex items-center gap-4 technical-code text-secondary-muted">
+            <span>KERALA // DXB // AUH</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         05. SELECTED WORK SECTION (CLIP PATH REVEAL & VIDEO PREVIEWS)
+         ===================================================================== -->
+    <section id="work" class="section-pad reveal-section">
+      <div class="section-container">
+        <!-- Section Slate Header -->
+        <div class="section-slate-header">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="section-number">01</span>
+              <span class="technical-code text-secondary-muted">/ ARCHIVE</span>
+            </div>
+            <h2 class="section-title">Selected Work</h2>
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class="filter-tabs" role="tablist" aria-label="Portfolio Category Filter">
+            <button class="filter-btn active" data-filter="all" role="tab">All Works</button>
+            <button class="filter-btn" data-filter="motion" role="tab">Motion Graphics</button>
+            <button class="filter-btn" data-filter="editing" role="tab">Video Editing</button>
+            <button class="filter-btn" data-filter="commercial" role="tab">Commercial</button>
+            <button class="filter-btn" data-filter="brand" role="tab">Brand Identity</button>
+          </div>
+        </div>
+
+        <!-- Asymmetric 12-Column Grid -->
+        <div class="projects-grid">
+          <!-- Project 01: NEO-DUBAI 2088 (Col 8) -->
+          <article class="project-card col-8 reveal-child" data-category="motion commercial" data-video-modal="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" tabindex="0">
+            <div class="project-media-box aspect-widescreen">
+              <img src="assets/project-1.jpg" alt="NEO-DUBAI 2088 Concept Visual" class="project-thumb" loading="lazy" />
+              <!-- Video Preview on Hover -->
+              <video class="project-video-preview" muted loop playsinline preload="metadata">
+                <source src="assets/videos/preview-1.mp4" type="video/mp4" />
+              </video>
+              <div class="project-scrim"></div>
+
+              <div class="project-badges">
+                <span class="badge-pill highlight">4K PRORES 4444</span>
+                <span class="badge-pill">AE + C4D + REDSHIFT</span>
+                <span class="badge-pill">CASE STUDY</span>
+              </div>
+
+              <div class="project-hover-trigger">
+                <div class="play-bubble">
+                  <span class="material-symbols-outlined text-[28px]">play_arrow</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info-bar">
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="label-caps text-primary">Motion Graphics / 3D Film</span>
+                  <span class="technical-code text-secondary-muted">• 2025</span>
+                </div>
+                <h3 class="project-title">NEO-DUBAI 2088</h3>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <span class="technical-code text-secondary-muted hidden sm:inline-block">DUR: 02:45 MIN</span>
+                <div class="w-8 h-8 rounded-full bg-surface-high flex items-center justify-center text-secondary">
+                  <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 02: CHRONICLES OF MALABAR (Col 4) -->
+          <article class="project-card col-4 reveal-child" data-category="editing" data-video-modal="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" tabindex="0">
+            <div class="project-media-box aspect-portrait">
+              <img src="assets/project-2.jpg" alt="Chronicles of Malabar still" class="project-thumb" loading="lazy" />
+              <!-- Video Preview on Hover -->
+              <video class="project-video-preview" muted loop playsinline preload="metadata">
+                <source src="assets/videos/preview-2.mp4" type="video/mp4" />
+              </video>
+              <div class="project-scrim"></div>
+
+              <div class="project-badges">
+                <span class="badge-pill highlight">DAVINCI COLOR</span>
+                <span class="badge-pill">DOCUMENTARY</span>
+              </div>
+
+              <div class="project-hover-trigger">
+                <div class="play-bubble">
+                  <span class="material-symbols-outlined text-[24px]">play_arrow</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info-bar">
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="label-caps text-primary">Cinematic Documentary</span>
+                  <span class="technical-code text-secondary-muted">• 2024</span>
+                </div>
+                <h3 class="project-title">CHRONICLES OF MALABAR</h3>
+              </div>
+
+              <div class="w-8 h-8 rounded-full bg-surface-high flex items-center justify-center text-secondary">
+                <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 03: HYPERCHARGE FORMULA (Col 5) -->
+          <article class="project-card col-5 reveal-child" data-category="motion commercial" data-video-modal="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" tabindex="0">
+            <div class="project-media-box aspect-portrait">
+              <img src="assets/project-3.jpg" alt="Hypercharge Formula visual" class="project-thumb" loading="lazy" />
+              <!-- Video Preview on Hover -->
+              <video class="project-video-preview" muted loop playsinline preload="metadata">
+                <source src="assets/videos/preview-3.mp4" type="video/mp4" />
+              </video>
+              <div class="project-scrim"></div>
+
+              <div class="project-badges">
+                <span class="badge-pill highlight">4K / 60 FPS</span>
+                <span class="badge-pill">KINETIC 3D</span>
+              </div>
+
+              <div class="project-hover-trigger">
+                <div class="play-bubble">
+                  <span class="material-symbols-outlined text-[24px]">play_arrow</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info-bar">
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="label-caps text-primary">Commercial / 3D Kinetic</span>
+                  <span class="technical-code text-secondary-muted">• 2025</span>
+                </div>
+                <h3 class="project-title">HYPERCHARGE FORMULA</h3>
+              </div>
+
+              <div class="w-8 h-8 rounded-full bg-surface-high flex items-center justify-center text-secondary">
+                <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 04: OBSIDIAN SOUND LABS (Col 7) -->
+          <article class="project-card col-7 reveal-child" data-category="brand" data-video-modal="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" tabindex="0">
+            <div class="project-media-box aspect-widescreen">
+              <img src="assets/project-4.jpg" alt="Obsidian Sound Labs graphic identity" class="project-thumb" loading="lazy" />
+              <!-- Video Preview on Hover -->
+              <video class="project-video-preview" muted loop playsinline preload="metadata">
+                <source src="assets/videos/preview-4.mp4" type="video/mp4" />
+              </video>
+              <div class="project-scrim"></div>
+
+              <div class="project-badges">
+                <span class="badge-pill highlight">BRAND SYSTEM</span>
+                <span class="badge-pill">KEY ART &amp; VINYL</span>
+              </div>
+
+              <div class="project-hover-trigger">
+                <div class="play-bubble">
+                  <span class="material-symbols-outlined text-[24px]">visibility</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info-bar">
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="label-caps text-primary">Visual Identity &amp; Key Art</span>
+                  <span class="technical-code text-secondary-muted">• 2024</span>
+                </div>
+                <h3 class="project-title">OBSIDIAN SOUND LABS</h3>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <span class="technical-code text-secondary-muted hidden sm:inline-block">PRINT • DIGITAL</span>
+                <div class="w-8 h-8 rounded-full bg-surface-high flex items-center justify-center text-secondary">
+                  <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         06. TAILORED SERVICES (HOVER EXPANSION ROWS)
+         ===================================================================== -->
+    <section id="services" class="section-pad bg-surface-lowest reveal-section">
+      <div class="section-container">
+        <!-- Section Slate Header -->
+        <div class="section-slate-header">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="section-number">02</span>
+              <span class="technical-code text-secondary-muted">/ CAPABILITIES</span>
+            </div>
+            <h2 class="section-title">Tailored Creative Services</h2>
+          </div>
+          <span class="technical-code text-secondary-muted hidden md:inline-block">SURGICAL PACING &amp; PRODUCTION VALUE</span>
+        </div>
+
+        <!-- Expandable Service Rows -->
+        <div class="services-list">
+          <!-- 01: Video Editing -->
+          <div class="service-row reveal-child" tabindex="0">
+            <div class="service-header-line">
+              <div class="service-id-title">
+                <span class="service-num">01</span>
+                <div>
+                  <h3 class="service-title">Video Editing</h3>
+                  <p class="font-body text-secondary-muted text-sm mt-1">Long-form documentaries, high-tempo commercials, narrative rhythm cuts, music videos, and immersive sound design.</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <span class="badge-pill hidden sm:inline-block">DAVINCI RESOLVE</span>
+                <span class="badge-pill hidden sm:inline-block">PREMIERE PRO</span>
+                <span class="material-symbols-outlined text-primary text-[20px]">chevron_right</span>
+              </div>
+            </div>
+
+            <!-- Expanded Details -->
+            <div class="service-details">
+              <p class="text-secondary-muted text-sm leading-relaxed">
+                Pacing is the heartbeat of visual storytelling. We provide end-to-end editorial assembly from multi-camera synching and raw dailies selection to razor-sharp match-cuts, psychological tempo manipulation, and surround-sound mixing.
+              </p>
+              <div class="service-tags-row">
+                <span class="badge-pill">Rough Cut Assembly</span>
+                <span class="badge-pill">DaVinci Color Pipeline</span>
+                <span class="badge-pill">Foley &amp; Sound Editing</span>
+                <span class="badge-pill">DCP Cinema Master</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 02: Motion Graphics -->
+          <div class="service-row reveal-child" tabindex="0">
+            <div class="service-header-line">
+              <div class="service-id-title">
+                <span class="service-num">02</span>
+                <div>
+                  <h3 class="service-title">Motion Graphics</h3>
+                  <p class="font-body text-secondary-muted text-sm mt-1">2D/3D kinetic animation, title sequences, brand reveals, futuristic UI for tech products, and particle VFX.</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <span class="badge-pill hidden sm:inline-block">AFTER EFFECTS</span>
+                <span class="badge-pill hidden sm:inline-block">CINEMA 4D</span>
+                <span class="material-symbols-outlined text-primary text-[20px]">chevron_right</span>
+              </div>
+            </div>
+
+            <!-- Expanded Details -->
+            <div class="service-details">
+              <p class="text-secondary-muted text-sm leading-relaxed">
+                High-chroma kinetic identity that elevates commercial campaigns. We engineer brutalist kinetic type systems, complex parametric motion simulations, and anamorphic 3D rendering tailored for high-end displays.
+              </p>
+              <div class="service-tags-row">
+                <span class="badge-pill">Kinetic Typography</span>
+                <span class="badge-pill">Broadcast Packages</span>
+                <span class="badge-pill">Holographic HUDs</span>
+                <span class="badge-pill">3D Sim &amp; Lighting</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 03: Graphic Design -->
+          <div class="service-row reveal-child" tabindex="0">
+            <div class="service-header-line">
+              <div class="service-id-title">
+                <span class="service-num">03</span>
+                <div>
+                  <h3 class="service-title">Graphic Design</h3>
+                  <p class="font-body text-secondary-muted text-sm mt-1">Comprehensive brand visual identities, editorial key art, movie posters, bespoke typography systems, and print collateral.</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <span class="badge-pill hidden sm:inline-block">PHOTOSHOP</span>
+                <span class="badge-pill hidden sm:inline-block">ILLUSTRATOR</span>
+                <span class="material-symbols-outlined text-primary text-[20px]">chevron_right</span>
+              </div>
+            </div>
+
+            <!-- Expanded Details -->
+            <div class="service-details">
+              <p class="text-secondary-muted text-sm leading-relaxed">
+                Crafting iconic film slates, editorial cinema posters, bespoke type design, and physical merchandise. Every asset is strictly aligned with the dark-room architectural aesthetic.
+              </p>
+              <div class="service-tags-row">
+                <span class="badge-pill">Key Art Design</span>
+                <span class="badge-pill">Packaging &amp; Vinyl</span>
+                <span class="badge-pill">Type Customization</span>
+                <span class="badge-pill">Brand Bible</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 04: Videography & Directing -->
+          <div class="service-row reveal-child" tabindex="0">
+            <div class="service-header-line">
+              <div class="service-id-title">
+                <span class="service-num">04</span>
+                <div>
+                  <h3 class="service-title">Videography &amp; Directing</h3>
+                  <p class="font-body text-secondary-muted text-sm mt-1">Full production camera operation (Sony FX, RED Digital Cinema), anamorphic glass, studio lighting setups across Kerala &amp; UAE.</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <span class="badge-pill hidden sm:inline-block">RED / SONY FX</span>
+                <span class="badge-pill hidden sm:inline-block">ANAMORPHIC</span>
+                <span class="material-symbols-outlined text-primary text-[20px]">chevron_right</span>
+              </div>
+            </div>
+
+            <!-- Expanded Details -->
+            <div class="service-details">
+              <p class="text-secondary-muted text-sm leading-relaxed">
+                On-location commercial directing and technical cinematography with anamorphic lens packages, motorized gimbal rigs, and calibrated cinema lighting for brands across the GCC and South Asia.
+              </p>
+              <div class="service-tags-row">
+                <span class="badge-pill">Location Scouting</span>
+                <span class="badge-pill">Crew Coordination</span>
+                <span class="badge-pill">Lighting Direction</span>
+                <span class="badge-pill">Color Temperature Control</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         07. SHOWREEL THEATER SECTION (ANAMORPHIC 2.39:1 WITH VIDEO EMBED)
+         ===================================================================== -->
+    <section id="showreel" class="section-pad reveal-section">
+      <div class="section-container">
+        <!-- Section Slate Header -->
+        <div class="section-slate-header">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="section-number">03</span>
+              <span class="technical-code text-secondary-muted">/ THE REEL</span>
+            </div>
+            <h2 class="section-title">2025 Directors Cut</h2>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <span class="badge-pill highlight">4K HDR DOLBY VISION</span>
+            <span class="badge-pill">MASTER STEREO</span>
+          </div>
+        </div>
+
+        <!-- Theater Frame Canvas with Anamorphic Aspect Ratio -->
+        <div class="theater-frame reveal-child" data-video-modal="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" tabindex="0">
+          <img src="assets/showreel.png" alt="Rinshaan 2025 Showreel Theater Frame" class="theater-poster" loading="lazy" />
+
+          <!-- Cinematic Letterbox Bars -->
+          <div class="letterbox-bar top"></div>
+          <div class="letterbox-bar bottom"></div>
+
+          <!-- Central Magnetic Play Trigger -->
+          <div class="theater-play-center">
+            <div class="magnetic-wrap">
+              <button class="relative group/play flex items-center justify-center p-4" aria-label="Play 2025 Showreel">
+                <span class="absolute w-28 h-28 rounded-full bg-primary/20 animate-ping"></span>
+                <span class="absolute w-24 h-24 rounded-full bg-primary/30 blur-md"></span>
+                <div class="relative w-20 h-20 rounded-full bg-primary text-black flex items-center justify-center shadow-[0_0_40px_rgba(255,77,31,0.8)] transition-transform duration-300 group-hover/play:scale-110">
+                  <span class="material-symbols-outlined text-[36px] ml-1">play_arrow</span>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Floating Minimal HUD Player Bar -->
+          <div class="theater-hud-bar">
+            <div class="flex items-center justify-between gap-4">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-[20px]">graphic_eq</span>
+                <span class="technical-code text-secondary font-semibold">RINSHAAN_AUTEUR_2025_4K.mov</span>
+              </div>
+
+              <!-- Animated Equalizer Bars -->
+              <div class="hidden sm:flex items-center gap-1 h-3">
+                <span class="w-1 h-3 bg-primary rounded animate-pulse"></span>
+                <span class="w-1 h-2 bg-primary rounded"></span>
+                <span class="w-1 h-4 bg-primary rounded animate-pulse"></span>
+                <span class="w-1 h-1 bg-secondary rounded"></span>
+                <span class="w-1 h-3 bg-primary rounded"></span>
+              </div>
+
+              <div class="technical-code text-secondary-muted flex items-center gap-2">
+                <span class="text-primary font-semibold">01:14</span>
+                <span>/ 02:30</span>
+              </div>
+            </div>
+
+            <!-- Video Progress Scrubber Bar -->
+            <div class="hud-progress-track">
+              <div class="hud-progress-fill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         08. ABOUT & BIOGRAPHY SECTION (WITH ANIMATED STATS COUNTER)
+         ===================================================================== -->
+    <section id="about" class="section-pad bg-surface-lowest reveal-section">
+      <div class="section-container">
+        <!-- Section Slate Header -->
+        <div class="section-slate-header">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="section-number">04</span>
+              <span class="technical-code text-secondary-muted">/ PROFILE</span>
+            </div>
+            <h2 class="section-title">The Mind Behind the Motion</h2>
+          </div>
+          <span class="technical-code text-secondary-muted hidden md:inline-block">KERALA • DUBAI • ABU DHABI</span>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left: Portrait Photo Container -->
+          <div class="portrait-wrapper reveal-child">
+            <img src="assets/portrait.png" alt="Cinematic editorial portrait of Rinshaan" class="portrait-img" loading="lazy" />
+
+            <!-- Editorial Slate Badge -->
+            <div class="absolute top-4 left-4 px-3 py-1 bg-primary text-black rounded technical-code font-bold uppercase tracking-wider shadow">
+              DIRECTOR / EDITOR
+            </div>
+
+            <div class="absolute bottom-4 inset-x-4 flex items-center justify-between bg-surface-void/90 backdrop-blur-md p-3 rounded border border-hairline">
+              <span class="technical-code text-secondary">RINSHAAN • KERALA // DXB</span>
+              <span class="technical-code text-primary">EST. 2017</span>
+            </div>
+          </div>
+
+          <!-- Right: Bio Narrative & Stats Grid -->
+          <div class="reveal-child">
+            <h3 class="font-display text-2xl md:text-3xl font-bold uppercase tracking-tight text-secondary mb-4">
+              Bridging Kerala's Soulful Narrative with Global Kinetic Precision.
+            </h3>
+            <p class="font-body text-secondary-muted text-base leading-relaxed mb-4">
+              I am Rinshaan, a multi-disciplinary visual artist, video editor, and motion designer. My storytelling foundation was sculpted through the vibrant cultural tapestry and visual cinema of Kerala, evolving into sleek commercial work for agencies and brands throughout Dubai, Abu Dhabi, and the GCC region.
+            </p>
+            <p class="font-body text-secondary-muted text-sm leading-relaxed mb-6">
+              Whether cutting an emotional documentary, directing high-tempo commercials with anamorphic lenses, or designing intricate 3D kinetic typographic identities, I treat every millisecond as a vessel for visceral impact.
+            </p>
+
+            <!-- Animated Stats Grid -->
+            <div class="stats-grid">
+              <div class="stat-box">
+                <div class="stat-number" data-target="8" data-suffix="+">0+</div>
+                <div class="stat-label">Years Crafting Visuals</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-number" data-target="140" data-suffix="+">0+</div>
+                <div class="stat-label">Projects Delivered</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-number" data-target="45" data-suffix="+">0+</div>
+                <div class="stat-label">Global Clients</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-number" data-target="99" data-suffix="%">0%</div>
+                <div class="stat-label">On-time Delivery</div>
+              </div>
+            </div>
+
+            <!-- Core Toolkit Pills -->
+            <div>
+              <span class="block label-caps text-secondary-muted mb-3">Core Production Toolkit</span>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge-pill">DaVinci Resolve Studio</span>
+                <span class="badge-pill">Adobe Premiere Pro</span>
+                <span class="badge-pill">After Effects</span>
+                <span class="badge-pill">Cinema 4D</span>
+                <span class="badge-pill">Photoshop</span>
+                <span class="badge-pill">Illustrator</span>
+                <span class="badge-pill">Blender 3D</span>
+                <span class="badge-pill">Octane Render</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         09. CLIENTS & COLLABORATORS MARQUEE
+         ===================================================================== -->
+    <section class="marquee-container" aria-label="Selected Production Partners">
+      <div class="marquee-content">
+        <span class="marquee-item">VERTEX MEDIA DXB</span>
+        <span class="text-surface-highest">•</span>
+        <span class="marquee-item">MALABAR STUDIOS</span>
+        <span class="text-surface-highest">•</span>
+        <span class="marquee-item">RED BULL GCC</span>
+        <span class="text-surface-highest">•</span>
+        <span class="marquee-item">PULSE RECORDS</span>
+        <span class="text-surface-highest">•</span>
+        <span class="marquee-item">HORIZON DIGITAL AUH</span>
+        <span class="text-surface-highest">•</span>
+        <span class="marquee-item">AVALANCHE CREATIVE</span>
+        <span class="text-surface-highest">•</span>
+        <!-- Duplicate for infinite seamless scroll -->
+        <span class="marquee-item">VERTEX MEDIA DXB</span>
+        <span class="text-surface-highest">•</span>
+        <span class="marquee-item">MALABAR STUDIOS</span>
+        <span class="text-surface-highest">•</span>
+        <span class="marquee-item">RED BULL GCC</span>
+        <span class="text-surface-highest">•</span>
+        <span class="marquee-item">PULSE RECORDS</span>
+        <span class="text-surface-highest">•</span>
+        <span class="marquee-item">HORIZON DIGITAL AUH</span>
+        <span class="text-surface-highest">•</span>
+        <span class="marquee-item">AVALANCHE CREATIVE</span>
+        <span class="text-surface-highest">•</span>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         10. CONTACT & INITIATE SECTION
+         ===================================================================== -->
+    <section id="contact" class="section-pad reveal-section">
+      <div class="section-container">
+        <!-- Section Slate Header -->
+        <div class="section-slate-header">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="section-number">05</span>
+              <span class="technical-code text-secondary-muted">/ INITIATE</span>
+            </div>
+            <h2 class="section-title">Let's Build Something Unforgettable.</h2>
+          </div>
+          <span class="technical-code text-secondary-muted hidden md:inline-block">INQUIRY RESPONSE &lt; 24H</span>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: Direct Channels & Links -->
+          <div class="flex flex-col gap-6 reveal-child">
+            <div>
+              <h3 class="font-display text-xl font-bold uppercase text-secondary mb-2">Direct Communication</h3>
+              <p class="font-body text-secondary-muted text-sm leading-relaxed">
+                Open to commercial commissions, long-form editorial assignments, and senior creative roles. Available worldwide remotely, and physically across Kerala, Dubai, &amp; Abu Dhabi.
+              </p>
+            </div>
+
+            <!-- Email Card with Copy Trigger -->
+            <div class="contact-card group">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[20px]">alternate_email</span>
+                </div>
+                <div>
+                  <span class="label-caps text-secondary-muted">Direct Email</span>
+                  <div class="technical-code text-secondary font-semibold">hello@rinshaan.com</div>
+                </div>
+              </div>
+              <button id="copy-email-btn" type="button" class="p-2 text-secondary-muted hover:text-primary transition-colors" aria-label="Copy email address">
+                <span class="material-symbols-outlined text-[20px]">content_copy</span>
+              </button>
+            </div>
+
+            <!-- WhatsApp Direct Card -->
+            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="contact-card group">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[20px]">chat</span>
+                </div>
+                <div>
+                  <span class="label-caps text-secondary-muted">WhatsApp Instant</span>
+                  <div class="technical-code text-secondary font-semibold">+91 (Kerala) / +971 (UAE)</div>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-secondary-muted group-hover:text-primary transition-colors text-[20px]">arrow_outward</span>
+            </a>
+
+            <!-- Social Links -->
+            <div>
+              <span class="block label-caps text-secondary-muted mb-3">Connected Channels</span>
+              <div class="flex flex-wrap gap-2">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="badge-pill hover:text-primary transition-colors">Instagram</a>
+                <a href="https://behance.net" target="_blank" rel="noopener noreferrer" class="badge-pill hover:text-primary transition-colors">Behance</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="badge-pill hover:text-primary transition-colors">LinkedIn</a>
+                <a href="https://vimeo.com" target="_blank" rel="noopener noreferrer" class="badge-pill hover:text-primary transition-colors">Vimeo Pro</a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="badge-pill hover:text-primary transition-colors">X / Twitter</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Sleek Production Inquiry Form -->
+          <div class="bg-surface-card p-6 md:p-8 rounded-lg border border-hairline shadow-2xl reveal-child">
+            <form id="inquiry-form" class="flex flex-col gap-6">
+              <!-- Scope Selection Pills -->
+              <div>
+                <label class="block label-caps text-secondary-muted mb-2">Select Scope of Project</label>
+                <div class="flex flex-wrap gap-2">
+                  <label class="cursor-pointer">
+                    <input type="checkbox" name="scope" value="video-editing" checked class="peer sr-only" />
+                    <span class="badge-pill peer-checked:bg-primary peer-checked:text-black peer-checked:border-primary transition-all">Video Editing</span>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="checkbox" name="scope" value="motion" class="peer sr-only" />
+                    <span class="badge-pill peer-checked:bg-primary peer-checked:text-black peer-checked:border-primary transition-all">Motion Graphics</span>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="checkbox" name="scope" value="design" class="peer sr-only" />
+                    <span class="badge-pill peer-checked:bg-primary peer-checked:text-black peer-checked:border-primary transition-all">Graphic Design</span>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="checkbox" name="scope" value="directing" class="peer sr-only" />
+                    <span class="badge-pill peer-checked:bg-primary peer-checked:text-black peer-checked:border-primary transition-all">Full Direction / Shoot</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Two Column Fields -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="form-name" class="block label-caps text-secondary-muted mb-1">Your Name / Agency</label>
+                  <input type="text" id="form-name" required placeholder="e.g. Alex Sterling" class="form-input" />
+                </div>
+                <div>
+                  <label for="form-email" class="block label-caps text-secondary-muted mb-1">Email Address</label>
+                  <input type="email" id="form-email" required placeholder="name@company.com" class="form-input" />
+                </div>
+              </div>
+
+              <!-- Budget Range Radio Pills -->
+              <div>
+                <label class="block label-caps text-secondary-muted mb-2">Budget Window (USD / AED Equivalent)</label>
+                <div class="grid grid-cols-3 gap-2">
+                  <label class="cursor-pointer text-center">
+                    <input type="radio" name="budget" value="2k-5k" class="peer sr-only" />
+                    <span class="block badge-pill w-full py-2 peer-checked:bg-primary peer-checked:text-black peer-checked:border-primary transition-all">$2,000 – $5,000</span>
+                  </label>
+                  <label class="cursor-pointer text-center">
+                    <input type="radio" name="budget" value="5k-10k" checked class="peer sr-only" />
+                    <span class="block badge-pill w-full py-2 peer-checked:bg-primary peer-checked:text-black peer-checked:border-primary transition-all">$5,000 – $10,000</span>
+                  </label>
+                  <label class="cursor-pointer text-center">
+                    <input type="radio" name="budget" value="10k-plus" class="peer sr-only" />
+                    <span class="block badge-pill w-full py-2 peer-checked:bg-primary peer-checked:text-black peer-checked:border-primary transition-all">$10,000+</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Description Field -->
+              <div>
+                <label for="form-message" class="block label-caps text-secondary-muted mb-1">Project Objective &amp; Timeline</label>
+                <textarea id="form-message" required rows="4" placeholder="Briefly describe the vision, desired delivery date, and technical specs..." class="form-input"></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="magnetic-wrap">
+                <button type="submit" class="btn-primary w-full">
+                  <span>Transmit Project Inquiry</span>
+                  <span class="material-symbols-outlined text-[18px]">send</span>
+                </button>
+              </div>
+
+              <div id="form-status" class="technical-code text-primary hidden text-center mt-2"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         11. DUAL CLOCKS SUB-BAR & FOOTER
+         ===================================================================== -->
+    <div class="w-full py-4 border-t border-b border-hairline bg-surface-lowest">
+      <div class="max-w-[1600px] mx-auto px-4 md:px-16 flex flex-col sm:flex-row items-center justify-between gap-4 technical-code text-secondary-muted">
+        <div class="flex items-center gap-6">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-primary"></span>
+            <span>KOCHI (IST): <strong id="kochi-clock" class="text-secondary font-mono">00:00:00</strong></span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+            <span>DUBAI (GST): <strong id="dubai-clock" class="text-secondary font-mono">00:00:00</strong></span>
+          </div>
+        </div>
+
+        <button type="button" class="flex items-center gap-1 text-secondary-muted hover:text-primary transition-colors label-caps" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+          <span>Back to Summit</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Site Footer -->
+    <footer class="w-full py-10 bg-surface-void">
+      <div class="max-w-[1600px] mx-auto px-4 md:px-16 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <span class="font-display text-xl font-bold tracking-tight text-secondary">RINSHAAN</span>
+          <span class="technical-code text-secondary-muted">© 2025 ALL RIGHTS RESERVED</span>
+        </div>
+
+        <div class="technical-code text-secondary-muted flex items-center gap-6">
+          <span>4K UHD / 2.39:1 CINEMATIC</span>
+          <span>DIR • COLOR • VFX</span>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a href="#work" class="label-caps text-secondary-muted hover:text-primary transition-colors">Archive</a>
+          <a href="#contact" class="label-caps text-secondary-muted hover:text-primary transition-colors">Bookings</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- =====================================================================
+       12. VIDEO LIGHTBOX MODAL (RESPONSIVE EMBEDDED PLAYER)
+       ===================================================================== -->
+  <div id="video-modal" class="video-modal" role="dialog" aria-modal="true" aria-label="Video Lightbox Player">
+    <div class="video-modal-inner">
+      <button id="video-modal-close" class="video-modal-close" type="button" aria-label="Close video player">
+        <span>CLOSE [ESC]</span>
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+      <iframe id="video-modal-frame" class="video-modal-frame" src="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- GSAP, ScrollTrigger & Lenis Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- Main Application Script -->
+  <script src="main.js"></script>
+</body>
+</html>

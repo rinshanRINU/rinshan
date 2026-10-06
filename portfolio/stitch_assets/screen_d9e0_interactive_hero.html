@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-primary": "#b42800", "on-error": "#690005", "secondary-fixed-dim": "#c6c6c7", "surface-tint": "#ffb4a2", "surface-container-high": "#2a2a2a", "on-primary-fixed": "#3c0700", "secondary": "#c6c6c7", "tertiary-fixed-dim": "#ffb59e", "surface-container-highest": "#353534", "on-tertiary": "#5d1800", "secondary-container": "#454747", "surface-bright": "#3a3939", "on-primary": "#621200", "on-secondary-container": "#b4b5b5", "surface-container": "#201f1f", "tertiary-container": "#eb693e", "primary": "#ffb4a2", "on-primary-container": "#560e00", "on-secondary": "#2f3131", "surface-container-low": "#1c1b1b", "on-secondary-fixed-variant": "#454747", "outline": "#ac8980", "on-error-container": "#ffdad6", "tertiary": "#ffb59e", "on-background": "#e5e2e1", "tertiary-fixed": "#ffdbd0", "on-tertiary-fixed": "#3a0b00", "background": "#131313", "error-container": "#93000a", "on-tertiary-container": "#521400", "on-surface": "#e5e2e1", "surface": "#131313", "surface-variant": "#353534", "on-primary-fixed-variant": "#8a1d00", "primary-container": "#ff562c", "primary-fixed": "#ffdad2", "primary-fixed-dim": "#ffb4a2", "inverse-surface": "#e5e2e1", "inverse-on-surface": "#313030", "on-tertiary-fixed-variant": "#842500", "error": "#ffb4ab", "surface-dim": "#131313", "on-secondary-fixed": "#1a1c1c", "surface-container-lowest": "#0e0e0e", "secondary-fixed": "#e2e2e2", "outline-variant": "#5c4039", "on-surface-variant": "#e5beb4" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "space-3xl": "6rem", "margin-mobile": "1.25rem", "margin": "4rem", "gutter-mobile": "0.75rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-2xl": "4rem", "space-md": "1rem" }, "fontFamily": { "technical-code": [ "JetBrains Mono" ], "headline-lg": [ "Space Grotesk" ], "headline-lg-mobile": [ "Space Grotesk" ], "label-caps": [ "JetBrains Mono" ], "headline-md": [ "Space Grotesk" ], "headline-xl-mobile": [ "Space Grotesk" ], "body-lg": [ "Geist" ], "headline-xl": [ "Space Grotesk" ], "body-md": [ "Geist" ], "body-sm": [ "Geist" ], "display-hero-mobile": [ "Space Grotesk" ], "display-hero": [ "Space Grotesk" ] }, "fontSize": { "technical-code": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "500" } ], "headline-lg": [ "40px", { "lineHeight": "46px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "headline-lg-mobile": [ "28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-caps": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.14em", "fontWeight": "600" } ], "headline-md": [ "24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "headline-xl-mobile": [ "36px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "body-lg": [ "18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "headline-xl": [ "64px", { "lineHeight": "68px", "letterSpacing": "-0.03em", "fontWeight": "600" } ], "body-md": [ "15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" } ], "body-sm": [ "13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" } ], "display-hero-mobile": [ "44px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "700" } ], "display-hero": [ "96px", { "lineHeight": "96px", "letterSpacing": "-0.04em", "fontWeight": "700" } ] } } } }</script></head><body class="bg-surface-container-lowest font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/85 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.6)]"><div class="h-20 w-full px-margin-mobile md:px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md shrink-0"><img alt="Rinshaan Wordmark Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WsTCtPvFRft6UbHZBrZbUqVDFVQH-oZ1G25B_aD66Fkbodgt5bXqTXc8MDPo2mXgVECWDTufjAiaeO12neI12E8iaMil2EHH9ujcTKlxvTALpjZnswa95OXScbWUjXeQPorJpZ4OllWAzweAVzGWCcp4a7tLM8t6sUdY4DjGvdZNdcKLnsaIcpqy0IngcrpCTk6QG_oaFPlzWzySwXMYmONkNvXuw4PfqXYmOEeuzBTWcRVm_XgNgNPyDw"/><span class="font-label-caps text-label-caps text-secondary-fixed-dim uppercase tracking-widest hidden sm:inline-block">Auteur Reel • Vol. IV</span></div><nav class="hidden lg:flex items-center gap-space-xl" data-active-classes="text-primary font-semibold"><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors tracking-widest" data-path="work" href="#work">Work</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors tracking-widest" data-path="services" href="#services">Services</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors tracking-widest" data-path="showreel" href="#showreel">Showreel</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors tracking-widest" data-path="about" href="#about">About</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors tracking-widest" data-path="contact" href="#contact">Contact</a></nav><div class="flex items-center gap-space-md shrink-0"><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse shadow-[0_0_12px_rgba(255,86,44,0.8)]"></span><span class="font-technical-code text-technical-code text-secondary">Kerala • Open to Dubai &amp; Abu Dhabi</span></div><a class="hidden sm:inline-flex items-center px-space-md py-space-xs rounded bg-primary-container text-on-primary-container font-label-caps text-label-caps uppercase hover:bg-tertiary-container hover:text-on-tertiary-container transition-all shadow-[0_0_24px_-4px_rgba(255,86,44,0.4)]" href="#contact">Get in Touch</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface-container-lowest relative"><div class="flex flex-col w-full">
+<!-- 01. HERO SECTION -->
+<section class="relative w-full -mt-20 overflow-hidden bg-surface-container-lowest">
+<!-- Ambient Glow Backdrops -->
+<div class="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary-container/10 blur-[130px] pointer-events-none"></div>
+<div class="absolute bottom-10 right-0 w-[500px] h-[500px] rounded-full bg-primary-container/5 blur-[160px] pointer-events-none"></div>
+<!-- Cinematic Background Hero Visual -->
+<div class="relative w-full min-h-[95vh] flex flex-col justify-between pt-28 pb-space-xl px-margin-mobile md:px-margin">
+<!-- Media Layer with Vignette & Gradients -->
+<div class="absolute inset-0 z-0 overflow-hidden">
+<img alt="Cyberpunk neon city moody hero visual" class="w-full h-full object-cover object-center filter brightness-[0.45] contrast-125 scale-105 transition-transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida/AEtjO1X0FFz6ib1J1LHGZ0Nt7_iWWX3qryJgvrBnmiVylBGWjpI77RHPQ_GijEc30sftfftyFr2u2Gc_9GQwrjqUV5Yh2j_MnHJCBWWRM1nZZNBwsfmgDCJ4q4eAF9jjnEEW_9DYZMeITM_mI6y9xn3Y9VLanVZsVjpsCSOa_h0TlcUQ0iLs0Ms5RJpM3q3Iq0fe1Tq8CgihBsvA64o0dxH46vTvgLcRhM-Gny5yBPH0f9Qke0OBvpc73PtapDHQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/60 to-surface-container-lowest/80"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/90 via-transparent to-surface-container-lowest/90"></div>
+<!-- Scanline subtle texture overlay -->
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(14,14,14,0.7)_100%)] pointer-events-none"></div>
+</div>
+<!-- WebGL Interactive Shader Overlay -->
+<!-- STITCH_SHADER_START:ANIMATION_7 class="absolute inset-0 w-full h-full pointer-events-none opacity-70 mix-blend-screen z-0" -->
+<div class="absolute inset-0 w-full h-full pointer-events-none opacity-70 mix-blend-screen z-0" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_7" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_7');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+// Simplex/Hash noise helpers
+float hash(vec2 p) {
+    p = fract(p * vec2(123.34, 456.21));
+    p += dot(p, p + 45.32);
+    return fract(p.x * p.y);
+}
+
+float noise(vec2 p) {
+    vec2 i = floor(p);
+    vec2 f = fract(p);
+    f = f * f * (3.0 - 2.0 * f);
+    float a = hash(i);
+    float b = hash(i + vec2(1.0, 0.0));
+    float c = hash(i + vec2(0.0, 1.0));
+    float d = hash(i + vec2(1.0, 1.0));
+    return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+}
+
+// Fractional Brownian Motion for atmospheric dark fluid mist
+float fbm(vec2 p) {
+    float v = 0.0;
+    float a = 0.5;
+    vec2 shift = vec2(100.0);
+    mat2 rot = mat2(cos(0.5), sin(0.5), -sin(0.5), cos(0.5));
+    for (int i = 0; i < 4; ++i) {
+        v += a * noise(p);
+        p = rot * p * 2.0 + shift;
+        a *= 0.5;
+    }
+    return v;
+}
+
+void main() {
+    vec2 st = gl_FragCoord.xy / u_resolution.xy;
+    vec2 uv = (gl_FragCoord.xy - 0.5 * u_resolution.xy) / min(u_resolution.x, u_resolution.y);
+    
+    // Normalized mouse with smooth fallback to center if zero
+    vec2 mouse = u_mouse / u_resolution.xy;
+    if (length(u_mouse) < 1.0) {
+        mouse = vec2(0.5, 0.5);
+    }
+    vec2 mouseUv = (u_mouse - 0.5 * u_resolution.xy) / min(u_resolution.x, u_resolution.y);
+
+    // Mouse distance & reactive influence
+    float distMouse = length(uv - mouseUv);
+    float mouseGlow = smoothstep(0.7, 0.0, distMouse);
+    float mouseWave = sin(distMouse * 18.0 - u_time * 2.5) * 0.03 * mouseGlow;
+
+    // Organic atmospheric movement
+    vec2 moveUv = uv + vec2(mouseWave);
+    float timeSlow = u_time * 0.15;
+    
+    // Layered fbm smoke / kinetic mist
+    float n1 = fbm(moveUv * 2.2 + vec2(timeSlow * 0.4, -timeSlow * 0.2));
+    float n2 = fbm(moveUv * 4.0 - vec2(timeSlow * 0.6, timeSlow * 0.3) + vec2(n1 * 1.2));
+    
+    // Floating cinematic micro-dust / particles
+    float particles = 0.0;
+    for (int i = 0; i < 3; i++) {
+        float fi = float(i);
+        vec2 pGrid = uv * (14.0 + fi * 8.0) + vec2(sin(u_time * 0.3 + fi), cos(u_time * 0.25 + fi * 1.5));
+        vec2 id = floor(pGrid);
+        vec2 gv = fract(pGrid) - 0.5;
+        
+        float h = hash(id + fi * 31.7);
+        if (h > 0.68) {
+            float sparkDist = length(gv);
+            float spark = smoothstep(0.12, 0.01, sparkDist);
+            // Twinkle & fade
+            float pulse = sin(u_time * 2.0 + h * 6.28) * 0.5 + 0.5;
+            particles += spark * pulse * (0.4 + 0.6 * mouseGlow);
+        }
+    }
+
+    // High frequency film grain / analog sensor noise
+    float grain = (hash(st * 450.0 + fract(u_time * 12.0)) - 0.5) * 0.06;
+
+    // Palette: Deep obsidian cinema black + electric orange (#FF4D1F) accents
+    vec3 colBase = vec3(0.039, 0.039, 0.043); // #0A0A0B deep black
+    vec3 colDeepMist = vec3(0.08, 0.04, 0.02); // warm shadow
+    vec3 colAccent = vec3(1.0, 0.302, 0.122); // #FF4D1F electric orange
+    vec3 colAmberLight = vec3(1.0, 0.55, 0.25); // amber highlight
+
+    // Build layered composition
+    vec3 color = colBase;
+    color = mix(color, colDeepMist, n1 * 0.85);
+    
+    // Mouse interactive volumetric torch / anamorphic spill
+    float orangeEnergy = (pow(mouseGlow, 1.8) * 0.55) + (n2 * mouseGlow * 0.4);
+    color += colAccent * orangeEnergy;
+
+    // Ambient subtle rim light from bottom left to top right
+    float diagonalSweep = smoothstep(-0.5, 0.8, uv.x + uv.y);
+    color += colAccent * (n1 * 0.12 * diagonalSweep);
+
+    // Particle embers glow
+    color += colAmberLight * particles * 0.85;
+
+    // Subtle edge vignette
+    float vignette = 1.0 - smoothstep(0.4, 1.4, length(uv));
+    color *= vignette;
+
+    // Analog 35mm grain overlay
+    color += grain;
+
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_7 -->
+<!-- Top Metadata HUD Ribbon -->
+<div class="relative z-10 w-full flex flex-wrap items-center justify-between gap-space-md pt-space-md">
+<!-- Live Status Capsule -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container/80 backdrop-blur-md shadow-md">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span>
+</span>
+<span class="font-technical-code text-technical-code text-on-surface">Available for Commission • Kerala / Dubai &amp; Abu Dhabi</span>
+</div>
+<!-- Coordinates & Format Slate -->
+<div class="flex items-center gap-space-lg text-secondary">
+<span class="font-technical-code text-technical-code tracking-widest hidden md:inline-block">LOC: 9.9312° N, 76.2673° E</span>
+<div class="h-3 w-[1px] bg-surface-container-highest hidden md:block"></div>
+<span class="font-technical-code text-technical-code tracking-widest text-primary">SCENE 01 / TAKE 04</span>
+</div>
+</div>
+<!-- Hero Typographic Epicenter -->
+<div class="relative z-10 w-full max-w-6xl mt-space-3xl mb-space-2xl">
+<div class="flex items-center gap-space-sm mb-space-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-[0.25em] text-primary-container">Auteur Reel • Vol. IV</span>
+<div class="w-12 h-[1px] bg-primary-container/40"></div>
+<span class="font-technical-code text-technical-code text-secondary">2.39:1 ANAMORPHIC</span>
+</div>
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface font-black uppercase tracking-tighter leading-[0.95] max-w-5xl">
+          I MAKE MOTION THAT <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container via-tertiary-container to-primary">MOVES PEOPLE.</span>
+</h1>
+<p class="mt-space-lg font-technical-code text-technical-code text-secondary tracking-wider max-w-3xl uppercase">
+          Video Editor / Motion Graphics Artist / Graphic Designer / Videographer
+        </p>
+<!-- CTA Cluster -->
+<div class="mt-space-xl flex flex-wrap items-center gap-space-md">
+<a class="group inline-flex items-center gap-space-md px-space-xl py-space-md rounded bg-primary-container text-on-primary-container font-label-caps text-label-caps uppercase tracking-widest transition-all duration-300 hover:bg-tertiary-container hover:shadow-[0_0_32px_rgba(255,86,44,0.45)]" href="#showreel">
+<span class="w-2.5 h-2.5 rounded-full bg-on-primary-container group-hover:scale-125 transition-transform"></span>
+<span>Watch 2025 Showreel (01:42)</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">play_arrow</span>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-xl py-space-md rounded bg-surface-container-high/60 backdrop-blur-md text-on-surface font-label-caps text-label-caps uppercase tracking-widest hover:bg-surface-container-highest hover:text-primary transition-all" href="#work">
+<span>Explore Selected Work</span>
+<span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+</a>
+</div>
+</div>
+<!-- Hero Bottom Bar & Scroll Indicator -->
+<div class="relative z-10 w-full flex items-end justify-between pt-space-lg">
+<div class="hidden sm:flex items-center gap-space-xs font-technical-code text-technical-code text-secondary">
+<span class="text-primary-container font-bold">TC</span>
+<span>00:00:00:00</span>
+<span class="text-surface-container-highest">/</span>
+<span>00:01:42:18</span>
+</div>
+<div class="flex flex-col items-center gap-2 mx-auto sm:mx-0">
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim uppercase tracking-widest">Scroll to explore</span>
+<div class="w-5 h-9 rounded-full bg-surface-container-high p-1 flex justify-center shadow-inner">
+<div class="w-1.5 h-2.5 rounded-full bg-primary-container animate-bounce"></div>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-space-md font-technical-code text-technical-code text-secondary">
+<span>KERALA // DXB // AUH</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 02. SELECTED WORK SECTION -->
+<section class="w-full py-space-3xl px-margin-mobile md:px-margin bg-surface-container-lowest relative" id="work">
+<div class="max-w-[1600px] mx-auto">
+<!-- Section Slate Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg pb-space-xl">
+<div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="font-label-caps text-label-caps text-primary-container">01</span>
+<span class="text-secondary-fixed-dim font-technical-code text-technical-code">/ ARCHIVE</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl uppercase font-bold text-on-surface tracking-tight">
+            Selected Work
+          </h2>
+</div>
+<!-- Filter Tabs Component -->
+<div class="flex flex-wrap items-center gap-2 bg-surface-container-low p-1.5 rounded-lg" id="portfolio-filter">
+<button class="filter-btn px-space-md py-1.5 rounded font-label-caps text-label-caps uppercase tracking-wider bg-primary-container text-on-primary-container" data-filter="all" type="button">All Works</button>
+<button class="filter-btn px-space-md py-1.5 rounded font-label-caps text-label-caps uppercase tracking-wider text-secondary hover:text-on-surface hover:bg-surface-container-high transition-colors" data-filter="motion" type="button">Motion Graphics</button>
+<button class="filter-btn px-space-md py-1.5 rounded font-label-caps text-label-caps uppercase tracking-wider text-secondary hover:text-on-surface hover:bg-surface-container-high transition-colors" data-filter="editing" type="button">Video Editing</button>
+<button class="filter-btn px-space-md py-1.5 rounded font-label-caps text-label-caps uppercase tracking-wider text-secondary hover:text-on-surface hover:bg-surface-container-high transition-colors" data-filter="commercial" type="button">Commercial</button>
+<button class="filter-btn px-space-md py-1.5 rounded font-label-caps text-label-caps uppercase tracking-wider text-secondary hover:text-on-surface hover:bg-surface-container-high transition-colors" data-filter="brand" type="button">Brand Identity</button>
+</div>
+</div>
+<!-- Editorial Bento / Grid (Alternating 2-Column Asymmetric) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Project 1: NEO-DUBAI 2088 (Featured Big Widescreen) -->
+<div class="lg:col-span-8 group relative bg-surface-container-low rounded-lg overflow-hidden flex flex-col shadow-xl" data-category="motion commercial">
+<div class="relative w-full aspect-[16/9] md:aspect-[2.39/1] overflow-hidden bg-surface-container-lowest">
+<img alt="NEO-DUBAI 2088 Cyberpunk Concept Motion Visual" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1X0FFz6ib1J1LHGZ0Nt7_iWWX3qryJgvrBnmiVylBGWjpI77RHPQ_GijEc30sftfftyFr2u2Gc_9GQwrjqUV5Yh2j_MnHJCBWWRM1nZZNBwsfmgDCJ4q4eAF9jjnEEW_9DYZMeITM_mI6y9xn3Y9VLanVZsVjpsCSOa_h0TlcUQ0iLs0Ms5RJpM3q3Iq0fe1Tq8CgihBsvA64o0dxH46vTvgLcRhM-Gny5yBPH0f9Qke0OBvpc73PtapDHQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+<!-- Floating Badge Specs -->
+<div class="absolute top-space-md left-space-md flex items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur-md text-primary font-technical-code text-technical-code">4K PRORES 4444</span>
+<span class="px-space-sm py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur-md text-secondary font-technical-code text-technical-code">AE + C4D + REDSHIFT</span>
+</div>
+<div class="absolute top-space-md right-space-md">
+<span class="px-space-sm py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps text-label-caps uppercase font-bold tracking-wider">Case Study</span>
+</div>
+<!-- Scrim Play Hover Icon -->
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-surface-container-lowest/40 backdrop-blur-[2px]">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-[0_0_30px_rgba(255,86,44,0.6)] transform scale-90 group-hover:scale-100 transition-transform">
+<span class="material-symbols-outlined text-[28px]">play_arrow</span>
+</div>
+</div>
+</div>
+<!-- Metadata Content Bar -->
+<div class="p-space-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md bg-surface-container">
+<div>
+<div class="flex items-center gap-space-sm mb-1">
+<span class="font-label-caps text-label-caps uppercase text-primary-container font-semibold tracking-wider">Motion Graphics / 3D Film</span>
+<span class="text-secondary-fixed-dim font-technical-code text-technical-code">• 2025</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold uppercase text-on-surface group-hover:text-primary transition-colors">
+                NEO-DUBAI 2088
+              </h3>
+</div>
+<div class="flex items-center gap-space-md self-end md:self-auto">
+<span class="font-technical-code text-technical-code text-secondary">DUR: 02:45 MIN</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 2: CHRONICLES OF MALABAR -->
+<div class="lg:col-span-4 group relative bg-surface-container-low rounded-lg overflow-hidden flex flex-col shadow-xl" data-category="editing">
+<div class="relative w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Cinematic atmospheric still of Malabar coastal backwaters at dawn, golden hour warm tones with high contrast shadows, mist on water, vintage traditional wooden boat, film grain documentary cinematography 24fps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADc6LNWDxZYVWWORx4AqsaNjOHvcUr57GJJDbVceHUdbSYmJ2wyQc_4Y3hwWwXsyHEm--foEK-tXiN_owBMrAhEu3d6gZw9VWTQQCQ2XTlgjKHhgregdn6BWl6iczsfkXHWrGvz5zIPM2Q_kogEpsFBDKWFlTESX204LdE3lThonUFLHH8wrA6n3Arb6WYnEJM_VswPfE3xjSKAsOZDQqFbkPcq6vhzfuogS7EYG1ihJvqLl6DX2Azkw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+<div class="absolute top-space-md left-space-md">
+<span class="px-space-sm py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur-md text-secondary font-technical-code text-technical-code">DAVINCI RESOLVE COLOR</span>
+</div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-surface-container-lowest/40 backdrop-blur-[2px]">
+<div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[24px]">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-space-lg bg-surface-container">
+<div class="flex items-center gap-space-sm mb-1">
+<span class="font-label-caps text-label-caps uppercase text-primary-container font-semibold tracking-wider">Cinematic Documentary</span>
+<span class="text-secondary-fixed-dim font-technical-code text-technical-code">• 2024</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold uppercase text-on-surface group-hover:text-primary transition-colors">
+              CHRONICLES OF MALABAR
+            </h3>
+<p class="mt-2 text-secondary font-body-sm text-body-sm line-clamp-2">
+              Color graded in DaVinci with rhythm-driven narrative cuts depicting heritage spice trade waterways.
+            </p>
+</div>
+</div>
+<!-- Project 3: HYPERCHARGE FORMULA -->
+<div class="lg:col-span-5 group relative bg-surface-container-low rounded-lg overflow-hidden flex flex-col shadow-xl" data-category="motion commercial">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="High octane kinetic commercial frame of futuristic electric hypercar speeding through Dubai neon highway tunnel with orange light streaks and dynamic camera blur, high energy visual effects" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRDdG06zd6-KZu9pt0OjqdONUglUHChs4zkPg8fAbLhlbNQk12ksHUB9KWuW-TWy5buUQRBGlxjvVSQUKn0J5CI0A97erzNYWuNgqI0lPtLcRsyfmoJBXFwIclt1bqwFagMUTKcYLPDbRhvJRqeTRT6I_QyWN3I-IjIbTwWSGmowGDDl_mOb2ljGbhp-ezW3DVH_cQnVzkwByokjh5J72jhVAnjjkdn1kHY520EWRH5ScVXQrzLH0L_A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+<div class="absolute top-space-md left-space-md">
+<span class="px-space-sm py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur-md text-primary font-technical-code text-technical-code">4K / 60 FPS COMMERCIAL</span>
+</div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-surface-container-lowest/40 backdrop-blur-[2px]">
+<div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[24px]">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-space-lg bg-surface-container">
+<div class="flex items-center gap-space-sm mb-1">
+<span class="font-label-caps text-label-caps uppercase text-primary-container font-semibold tracking-wider">Commercial / 3D Kinetic</span>
+<span class="text-secondary-fixed-dim font-technical-code text-technical-code">• 2025</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold uppercase text-on-surface group-hover:text-primary transition-colors">
+              HYPERCHARGE FORMULA
+            </h3>
+<p class="mt-2 text-secondary font-body-sm text-body-sm">
+              Kinetic typography, fast match cuts, and custom sound design engineered for EV brand broadcast.
+            </p>
+</div>
+</div>
+<!-- Project 4: OBSIDIAN SOUND LABS -->
+<div class="lg:col-span-7 group relative bg-surface-container-low rounded-lg overflow-hidden flex flex-col shadow-xl" data-category="brand">
+<div class="relative w-full aspect-[16/9] md:aspect-[2.1/1] overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="High-end graphic design visual identity showpiece with brutalist typography, holographic foil textures on luxury black vinyl record packaging and metallic editorial layout presentation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB35-nxdZkgmpIV-mrhrrJ0JXmx8GA5reRZQkR5xQBJCd9r9bHmWU5SNAJTEIUCkK7pd_aqvzk_0Dc6IO_i7hk956n6lrxjBBttvoivduDZ8uEWBYznaVGlYDD5MaRabVPrLIdxea6az4_4Q71G5PJbUOhrrrm3RMnBpKhuy7jtgSIJCUMsBBYUYU585ETIB3xaqKXyMF90PVbpOCcYq1R-yn0e9KxMeSKkSjfKTWGk8xVZ53mJCecSVw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+<div class="absolute top-space-md left-space-md">
+<span class="px-space-sm py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur-md text-secondary font-technical-code text-technical-code">BRAND SYSTEM + KEY ART</span>
+</div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-surface-container-lowest/40 backdrop-blur-[2px]">
+<div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[24px]">visibility</span>
+</div>
+</div>
+</div>
+<div class="p-space-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md bg-surface-container">
+<div>
+<div class="flex items-center gap-space-sm mb-1">
+<span class="font-label-caps text-label-caps uppercase text-primary-container font-semibold tracking-wider">Graphic Design &amp; Visual Identity</span>
+<span class="text-secondary-fixed-dim font-technical-code text-technical-code">• 2024</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold uppercase text-on-surface group-hover:text-primary transition-colors">
+                OBSIDIAN SOUND LABS
+              </h3>
+</div>
+<div class="flex items-center gap-space-md self-end md:self-auto">
+<span class="font-technical-code text-technical-code text-secondary">PRINT • DIGITAL</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 03. SERVICES SECTION -->
+<section class="w-full py-space-3xl px-margin-mobile md:px-margin bg-surface-container-low relative" id="services">
+<div class="max-w-[1600px] mx-auto">
+<!-- Section Header -->
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="font-label-caps text-label-caps text-primary-container">02</span>
+<span class="text-secondary-fixed-dim font-technical-code text-technical-code">/ CAPABILITIES</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl uppercase font-bold text-on-surface tracking-tight mb-space-2xl">
+        Tailored Creative Services
+      </h2>
+<!-- Interactive Capabilities Rows -->
+<div class="flex flex-col gap-space-md">
+<!-- Capability 01 -->
+<div class="service-item group p-space-lg md:p-space-xl rounded-lg bg-surface-container hover:bg-surface-container-high transition-all duration-300 cursor-pointer shadow-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex items-start gap-space-lg">
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-primary-container">01</span>
+<div>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold uppercase text-on-surface group-hover:text-primary transition-colors">
+                  VIDEO EDITING
+                </h3>
+<p class="mt-space-xs font-body-md text-body-md text-secondary max-w-2xl">
+                  Long-form documentaries, high-tempo commercials, narrative rhythm cuts, music videos, and immersive cinematic sound design.
+                </p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm lg:justify-end">
+<span class="px-space-sm py-1 rounded bg-surface-container-lowest font-technical-code text-technical-code text-secondary">DAVINCI RESOLVE</span>
+<span class="px-space-sm py-1 rounded bg-surface-container-lowest font-technical-code text-technical-code text-secondary">PREMIERE PRO</span>
+<span class="px-space-sm py-1 rounded bg-surface-container-lowest font-technical-code text-technical-code text-secondary">PACING &amp; SOUND EDIT</span>
+<a class="inline-flex items-center gap-1 font-label-caps text-label-caps uppercase text-primary-container hover:text-tertiary ml-space-sm" href="#contact">
+<span>Book Service</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Capability 02 -->
+<div class="service-item group p-space-lg md:p-space-xl rounded-lg bg-surface-container hover:bg-surface-container-high transition-all duration-300 cursor-pointer shadow-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex items-start gap-space-lg">
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-primary-container">02</span>
+<div>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold uppercase text-on-surface group-hover:text-primary transition-colors">
+                  MOTION GRAPHICS
+                </h3>
+<p class="mt-space-xs font-body-md text-body-md text-secondary max-w-2xl">
+                  2D/3D kinetic animation, title sequences, brand logo reveals, UI animation for tech products, broadcast packages, and particle VFX.
+                </p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm lg:justify-end">
+<span class="px-space-sm py-1 rounded bg-surface-container-lowest font-technical-code text-technical-code text-secondary">AFTER EFFECTS</span>
+<span class="px-space-sm py-1 rounded bg-surface-container-lowest font-technical-code text-technical-code text-secondary">CINEMA 4D</span>
+<span class="px-space-sm py-1 rounded bg-surface-container-lowest font-technical-code text-technical-code text-secondary">BLENDER 3D</span>
+<a class="inline-flex items-center gap-1 font-label-caps text-label-caps uppercase text-primary-container hover:text-tertiary ml-space-sm" href="#contact">
+<span>Book Service</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Capability 03 -->
+<div class="service-item group p-space-lg md:p-space-xl rounded-lg bg-surface-container hover:bg-surface-container-high transition-all duration-300 cursor-pointer shadow-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex items-start gap-space-lg">
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-primary-container">03</span>
+<div>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold uppercase text-on-surface group-hover:text-primary transition-colors">
+                  GRAPHIC DESIGN
+                </h3>
+<p class="mt-space-xs font-body-md text-body-md text-secondary max-w-2xl">
+                  Comprehensive brand visual identities, editorial key art, movie posters, bespoke typography systems, and high-impact digital social collateral.
+                </p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm lg:justify-end">
+<span class="px-space-sm py-1 rounded bg-surface-container-lowest font-technical-code text-technical-code text-secondary">PHOTOSHOP</span>
+<span class="px-space-sm py-1 rounded bg-surface-container-lowest font-technical-code text-technical-code text-secondary">ILLUSTRATOR</span>
+<span class="px-space-sm py-1 rounded bg-surface-container-lowest font-technical-code text-technical-code text-secondary">KEY ART SYSTEM</span>
+<a class="inline-flex items-center gap-1 font-label-caps text-label-caps uppercase text-primary-container hover:text-tertiary ml-space-sm" href="#contact">
+<span>Book Service</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Capability 04 -->
+<div class="service-item group p-space-lg md:p-space-xl rounded-lg bg-surface-container hover:bg-surface-container-high transition-all duration-300 cursor-pointer shadow-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex items-start gap-space-lg">
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-primary-container">04</span>
+<div>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold uppercase text-on-surface group-hover:text-primary transition-colors">
+                  VIDEOGRAPHY &amp; DIRECTING
+                </h3>
+<p class="mt-space-xs font-body-md text-body-md text-secondary max-w-2xl">
+                  Full production camera operation (Sony FX, RED Digital Cinema), anamorphic glass, studio lighting setups, on-location shooting across Kerala &amp; UAE.
+                </p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm lg:justify-end">
+<span class="px-space-sm py-1 rounded bg-surface-container-lowest font-technical-code text-technical-code text-secondary">RED / SONY FX</span>
+<span class="px-space-sm py-1 rounded bg-surface-container-lowest font-technical-code text-technical-code text-secondary">ANAMORPHIC RIGS</span>
+<span class="px-space-sm py-1 rounded bg-surface-container-lowest font-technical-code text-technical-code text-secondary">ON-LOCATION GCC</span>
+<a class="inline-flex items-center gap-1 font-label-caps text-label-caps uppercase text-primary-container hover:text-tertiary ml-space-sm" href="#contact">
+<span>Book Service</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 04. SHOWREEL SECTION -->
+<section class="w-full py-space-3xl px-margin-mobile md:px-margin bg-surface-container-lowest relative" id="showreel">
+<div class="max-w-[1600px] mx-auto">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="font-label-caps text-label-caps text-primary-container">03</span>
+<span class="text-secondary-fixed-dim font-technical-code text-technical-code">/ THE REEL</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl uppercase font-bold text-on-surface tracking-tight">
+            2025 Directors Cut
+          </h2>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="px-space-sm py-1 rounded bg-surface-container font-technical-code text-technical-code text-secondary">4K HDR DOLBY VISION</span>
+<span class="px-space-sm py-1 rounded bg-surface-container font-technical-code text-technical-code text-primary">SOUND ON • MASTER STEREO</span>
+</div>
+</div>
+<!-- Theater Canvas with 2.39:1 Anamorphic Framing -->
+<div class="relative w-full aspect-[16/9] md:aspect-[2.39/1] rounded-xl overflow-hidden bg-surface-container-lowest shadow-2xl group">
+<!-- Visual Backdrop from Image 4 -->
+<img alt="Showreel 2025 visual theater background" class="w-full h-full object-cover filter brightness-[0.55] group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida/AEtjO1X0FFz6ib1J1LHGZ0Nt7_iWWX3qryJgvrBnmiVylBGWjpI77RHPQ_GijEc30sftfftyFr2u2Gc_9GQwrjqUV5Yh2j_MnHJCBWWRM1nZZNBwsfmgDCJ4q4eAF9jjnEEW_9DYZMeITM_mI6y9xn3Y9VLanVZsVjpsCSOa_h0TlcUQ0iLs0Ms5RJpM3q3Iq0fe1Tq8CgihBsvA64o0dxH46vTvgLcRhM-Gny5yBPH0f9Qke0OBvpc73PtapDHQ"/>
+<!-- Cinematic Letterbox Bars -->
+<div class="absolute top-0 inset-x-0 h-4 md:h-8 bg-surface-container-lowest/90 backdrop-blur-sm"></div>
+<div class="absolute bottom-0 inset-x-0 h-4 md:h-8 bg-surface-container-lowest/90 backdrop-blur-sm"></div>
+<!-- Magnetic Ambient Play Trigger -->
+<div class="absolute inset-0 flex items-center justify-center">
+<button aria-label="Play Master Reel" class="relative group/play flex items-center justify-center" type="button">
+<!-- Pulsing Rings -->
+<span class="absolute w-28 h-28 rounded-full bg-primary-container/20 animate-ping"></span>
+<span class="absolute w-24 h-24 rounded-full bg-primary-container/30 blur-md"></span>
+<div class="relative w-20 h-20 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-[0_0_40px_rgba(255,86,44,0.8)] transition-transform duration-300 group-hover/play:scale-110">
+<span class="material-symbols-outlined text-[36px] ml-1">play_arrow</span>
+</div>
+</button>
+</div>
+<!-- Floating Minimal HUD Player Bar -->
+<div class="absolute bottom-8 inset-x-8 md:bottom-12 md:inset-x-12 z-20 bg-surface-container-lowest/80 backdrop-blur-md rounded-lg p-space-md shadow-lg">
+<div class="flex items-center justify-between gap-space-md mb-2">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">graphic_eq</span>
+<span class="font-technical-code text-technical-code text-on-surface">RINSHAAN_AUTEUR_2025_4K.mov</span>
+</div>
+<!-- Dynamic SVG Waveform -->
+<div class="hidden sm:flex items-center gap-1 h-4">
+<span class="w-1 h-3 bg-primary-container rounded animate-pulse"></span>
+<span class="w-1 h-4 bg-primary-container rounded"></span>
+<span class="w-1 h-2 bg-primary rounded"></span>
+<span class="w-1 h-5 bg-primary-container rounded animate-pulse"></span>
+<span class="w-1 h-3 bg-secondary rounded"></span>
+<span class="w-1 h-4 bg-primary-container rounded"></span>
+<span class="w-1 h-2 bg-primary rounded"></span>
+</div>
+<div class="font-technical-code text-technical-code text-secondary flex items-center gap-space-sm">
+<span class="text-primary-container font-semibold">01:14</span>
+<span>/ 02:30</span>
+</div>
+</div>
+<!-- Video Progress Scrubber -->
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden relative cursor-pointer">
+<div class="h-full bg-primary-container w-[49%] relative">
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-on-surface rounded-full shadow"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 05. ABOUT SECTION -->
+<section class="w-full py-space-3xl px-margin-mobile md:px-margin bg-surface-container-low relative" id="about">
+<div class="max-w-[1600px] mx-auto">
+<!-- Section Header -->
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="font-label-caps text-label-caps text-primary-container">04</span>
+<span class="text-secondary-fixed-dim font-technical-code text-technical-code">/ PROFILE</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl uppercase font-bold text-on-surface tracking-tight mb-space-2xl">
+        The Mind Behind the Motion
+      </h2>
+<!-- Split Layout: Portrait & Narrative -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
+<!-- Left: Portrait Photo Container -->
+<div class="lg:col-span-5 relative">
+<div class="relative rounded-lg overflow-hidden bg-surface-container shadow-2xl">
+<img alt="Cinematic editorial portrait of Rinshaan" class="w-full aspect-[4/5] object-cover object-top filter contrast-110" src="https://lh3.googleusercontent.com/aida/AEtjO1Wwo2EWuD8ED7tpXVH2vRy1ltuBC6BEbbBe9tlVnAxFb5AVpVLARoHfjTUFEI6XSzPuST-MRKBbT2aCpSIV9B5ktXSeRC4xrijv9ZSem2JlnFjYZJvOIzOBi57f0UXph9wE7QlMJ7GbVpSbYM13i7pOlogyu-XSfO9FBQYvmqy8Sh_7hrSA0Bw02iBYfqDSEJM-PpHJUjUJL_EfI57SZqoyt3SppplGvcfahBr09gVPB-leDx_SR6wad1gx"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<!-- Editorial Studio Slate Tape Tag -->
+<div class="absolute top-space-md left-space-md px-space-md py-1 bg-primary-container text-on-primary-container rounded shadow font-technical-code text-technical-code tracking-widest uppercase font-bold">
+              DIRECTOR / EDITOR
+            </div>
+<div class="absolute bottom-space-md inset-x-space-md flex items-center justify-between bg-surface-container/90 backdrop-blur-md p-space-sm rounded">
+<span class="font-technical-code text-technical-code text-on-surface">RINSHAAN • KERALA // DXB</span>
+<span class="font-technical-code text-technical-code text-primary-container">EST. 2017</span>
+</div>
+</div>
+<!-- Decorative Background Glow -->
+<div class="absolute -bottom-10 -right-10 w-48 h-48 bg-primary-container/15 rounded-full blur-[80px] -z-10"></div>
+</div>
+<!-- Right: Bio Narrative & Stats Grid -->
+<div class="lg:col-span-7 flex flex-col justify-center">
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-on-surface uppercase tracking-tight mb-space-md">
+            Bridging Kerala's Soulful Narrative with Global Kinetic Precision.
+          </h3>
+<p class="font-body-lg text-body-lg text-secondary leading-relaxed mb-space-md">
+            I am Rinshaan, a multi-disciplinary visual artist, video editor, and motion designer. My storytelling foundation was sculpted through the vibrant cultural tapestry and visual cinema of Kerala, evolving into sleek commercial work for agencies and brands throughout Dubai, Abu Dhabi, and the GCC region.
+          </p>
+<p class="font-body-md text-body-md text-secondary leading-relaxed mb-space-xl">
+            Whether cutting an emotional documentary, directing high-tempo commercials with anamorphic lenses, or designing intricate 3D kinetic typographic identities, I treat every millisecond as a vessel for visceral impact.
+          </p>
+<!-- Animated-Styled Stats Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md mb-space-xl">
+<div class="p-space-md rounded-lg bg-surface-container shadow-sm">
+<div class="font-headline-lg text-headline-lg font-bold text-primary-container">8+</div>
+<div class="font-technical-code text-technical-code text-secondary mt-1">Years Crafting Visuals</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container shadow-sm">
+<div class="font-headline-lg text-headline-lg font-bold text-primary-container">140+</div>
+<div class="font-technical-code text-technical-code text-secondary mt-1">Projects Delivered</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container shadow-sm">
+<div class="font-headline-lg text-headline-lg font-bold text-primary-container">45+</div>
+<div class="font-technical-code text-technical-code text-secondary mt-1">Global Clients</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container shadow-sm">
+<div class="font-headline-lg text-headline-lg font-bold text-primary-container">99%</div>
+<div class="font-technical-code text-technical-code text-secondary mt-1">On-time Delivery</div>
+</div>
+</div>
+<!-- Production Toolkit Pills -->
+<div>
+<span class="block font-label-caps text-label-caps text-secondary-fixed-dim uppercase tracking-widest mb-space-sm">Core Production Toolkit</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-space-md py-1.5 rounded bg-surface-container font-technical-code text-technical-code text-on-surface">DaVinci Resolve Studio</span>
+<span class="px-space-md py-1.5 rounded bg-surface-container font-technical-code text-technical-code text-on-surface">Adobe Premiere Pro</span>
+<span class="px-space-md py-1.5 rounded bg-surface-container font-technical-code text-technical-code text-on-surface">After Effects</span>
+<span class="px-space-md py-1.5 rounded bg-surface-container font-technical-code text-technical-code text-on-surface">Cinema 4D</span>
+<span class="px-space-md py-1.5 rounded bg-surface-container font-technical-code text-technical-code text-on-surface">Photoshop</span>
+<span class="px-space-md py-1.5 rounded bg-surface-container font-technical-code text-technical-code text-on-surface">Illustrator</span>
+<span class="px-space-md py-1.5 rounded bg-surface-container font-technical-code text-technical-code text-on-surface">Blender 3D</span>
+<span class="px-space-md py-1.5 rounded bg-surface-container font-technical-code text-technical-code text-on-surface">Octane Render</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 06. COLLABORATORS & CLIENTS STRIP -->
+<section class="w-full py-space-2xl bg-surface-container-lowest overflow-hidden">
+<div class="max-w-[1600px] mx-auto px-margin-mobile md:px-margin mb-space-lg text-center md:text-left">
+<span class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-secondary">Select Studios, Brands &amp; Production Partners</span>
+</div>
+<!-- Muted Monochromatic Marquee -->
+<div class="w-full flex items-center justify-between gap-space-xl overflow-x-auto py-space-sm px-margin-mobile md:px-margin opacity-70 hover:opacity-100 transition-opacity">
+<span class="font-headline-md text-headline-md font-bold text-secondary hover:text-primary transition-colors tracking-tighter shrink-0 cursor-default">VERTEX MEDIA DXB</span>
+<span class="text-surface-container-highest">•</span>
+<span class="font-headline-md text-headline-md font-bold text-secondary hover:text-primary transition-colors tracking-tighter shrink-0 cursor-default">MALABAR STUDIOS</span>
+<span class="text-surface-container-highest">•</span>
+<span class="font-headline-md text-headline-md font-bold text-secondary hover:text-primary transition-colors tracking-tighter shrink-0 cursor-default">RED BULL GCC</span>
+<span class="text-surface-container-highest">•</span>
+<span class="font-headline-md text-headline-md font-bold text-secondary hover:text-primary transition-colors tracking-tighter shrink-0 cursor-default">PULSE RECORDS</span>
+<span class="text-surface-container-highest">•</span>
+<span class="font-headline-md text-headline-md font-bold text-secondary hover:text-primary transition-colors tracking-tighter shrink-0 cursor-default">HORIZON DIGITAL AUH</span>
+<span class="text-surface-container-highest">•</span>
+<span class="font-headline-md text-headline-md font-bold text-secondary hover:text-primary transition-colors tracking-tighter shrink-0 cursor-default">AVALANCHE CREATIVE</span>
+</div>
+</section>
+<!-- 07. CONTACT & INITIATE SECTION -->
+<section class="w-full py-space-3xl px-margin-mobile md:px-margin bg-surface-container relative" id="contact">
+<div class="max-w-[1600px] mx-auto">
+<!-- Section Header -->
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="font-label-caps text-label-caps text-primary-container">05</span>
+<span class="text-secondary-fixed-dim font-technical-code text-technical-code">/ INITIATE</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl uppercase font-bold text-on-surface tracking-tight mb-space-2xl max-w-4xl">
+        Let's Build Something <span class="text-primary-container">Unforgettable.</span>
+</h2>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-start">
+<!-- Left: Direct Channels & Presence -->
+<div class="lg:col-span-5 flex flex-col gap-space-xl">
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface uppercase mb-space-sm">
+              Direct Communication
+            </h3>
+<p class="font-body-md text-body-md text-secondary">
+              Open to commercial commissions, long-form editorial assignments, and senior creative roles. Available worldwide remotely, and physically across Kerala, Dubai, &amp; Abu Dhabi.
+            </p>
+</div>
+<!-- Contact Cards -->
+<div class="flex flex-col gap-space-sm">
+<!-- Email Item with Copy Trigger -->
+<div class="flex items-center justify-between p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors group">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">alternate_email</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps uppercase text-secondary">Direct Email</span>
+<div class="font-technical-code text-technical-code text-on-surface font-semibold">hello@rinshaan.com</div>
+</div>
+</div>
+<button aria-label="Copy Email" class="p-2 text-secondary hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('hello@rinshaan.com')" type="button">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+</button>
+</div>
+<!-- WhatsApp Direct Item -->
+<a class="flex items-center justify-between p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors group" href="https://wa.me/" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps uppercase text-secondary">WhatsApp Instant</span>
+<div class="font-technical-code text-technical-code text-on-surface font-semibold">+91 (Kerala) / +971 (UAE)</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[20px]">arrow_outward</span>
+</a>
+</div>
+<!-- Social Channels Hub -->
+<div>
+<span class="block font-label-caps text-label-caps uppercase text-secondary tracking-widest mb-space-sm">Connected Channels</span>
+<div class="flex flex-wrap gap-space-sm">
+<a class="px-space-md py-2 rounded bg-surface-container-low hover:bg-primary-container hover:text-on-primary-container transition-all font-label-caps text-label-caps uppercase" href="#">Instagram</a>
+<a class="px-space-md py-2 rounded bg-surface-container-low hover:bg-primary-container hover:text-on-primary-container transition-all font-label-caps text-label-caps uppercase" href="#">Behance</a>
+<a class="px-space-md py-2 rounded bg-surface-container-low hover:bg-primary-container hover:text-on-primary-container transition-all font-label-caps text-label-caps uppercase" href="#">LinkedIn</a>
+<a class="px-space-md py-2 rounded bg-surface-container-low hover:bg-primary-container hover:text-on-primary-container transition-all font-label-caps text-label-caps uppercase" href="#">Vimeo Pro</a>
+<a class="px-space-md py-2 rounded bg-surface-container-low hover:bg-primary-container hover:text-on-primary-container transition-all font-label-caps text-label-caps uppercase" href="#">X / Twitter</a>
+</div>
+</div>
+</div>
+<!-- Right: Sleek Production Inquiry Form -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-lg md:p-space-2xl rounded-xl shadow-2xl">
+<form class="flex flex-col gap-space-lg" onsubmit="event.preventDefault(); alert('Transmission Received. Rinshaan will respond within 24 hours.');">
+<!-- Project Type Multiselect Pills Mock -->
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-secondary tracking-widest mb-space-sm">Select Scope of Project</label>
+<div class="flex flex-wrap gap-2">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="scope" type="checkbox" value="video-editing"/>
+<span class="px-space-md py-1.5 rounded bg-surface-container-high peer-checked:bg-primary-container peer-checked:text-on-primary-container font-technical-code text-technical-code transition-colors inline-block text-secondary">Video Editing</span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="scope" type="checkbox" value="motion"/>
+<span class="px-space-md py-1.5 rounded bg-surface-container-high peer-checked:bg-primary-container peer-checked:text-on-primary-container font-technical-code text-technical-code transition-colors inline-block text-secondary">Motion Graphics</span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="scope" type="checkbox" value="design"/>
+<span class="px-space-md py-1.5 rounded bg-surface-container-high peer-checked:bg-primary-container peer-checked:text-on-primary-container font-technical-code text-technical-code transition-colors inline-block text-secondary">Graphic Design</span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="scope" type="checkbox" value="production"/>
+<span class="px-space-md py-1.5 rounded bg-surface-container-high peer-checked:bg-primary-container peer-checked:text-on-primary-container font-technical-code text-technical-code transition-colors inline-block text-secondary">Full Direction / Shoot</span>
+</label>
+</div>
+</div>
+<!-- Two-Col Inputs -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-secondary mb-1" for="name">Your Name / Agency</label>
+<input class="w-full bg-surface-container px-space-md py-space-sm rounded font-body-md text-on-surface placeholder:text-secondary-fixed-dim/40 focus:outline-none focus:ring-1 focus:ring-primary-container" id="name" placeholder="e.g. Alex Sterling" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-secondary mb-1" for="email">Email Address</label>
+<input class="w-full bg-surface-container px-space-md py-space-sm rounded font-body-md text-on-surface placeholder:text-secondary-fixed-dim/40 focus:outline-none focus:ring-1 focus:ring-primary-container" id="email" placeholder="name@company.com" required="" type="email"/>
+</div>
+</div>
+<!-- Budget Expectation -->
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-secondary tracking-widest mb-space-sm">Budget Window (USD / AED Equivalent)</label>
+<div class="grid grid-cols-3 gap-space-sm">
+<label class="cursor-pointer text-center">
+<input class="peer sr-only" name="budget" type="radio" value="2k-5k"/>
+<span class="block px-space-sm py-2 rounded bg-surface-container-high peer-checked:bg-primary-container peer-checked:text-on-primary-container font-technical-code text-technical-code text-secondary transition-colors">$2,000 – $5,000</span>
+</label>
+<label class="cursor-pointer text-center">
+<input checked="" class="peer sr-only" name="budget" type="radio" value="5k-10k"/>
+<span class="block px-space-sm py-2 rounded bg-surface-container-high peer-checked:bg-primary-container peer-checked:text-on-primary-container font-technical-code text-technical-code text-secondary transition-colors">$5,000 – $10,000</span>
+</label>
+<label class="cursor-pointer text-center">
+<input class="peer sr-only" name="budget" type="radio" value="10k-plus"/>
+<span class="block px-space-sm py-2 rounded bg-surface-container-high peer-checked:bg-primary-container peer-checked:text-on-primary-container font-technical-code text-technical-code text-secondary transition-colors">$10,000+</span>
+</label>
+</div>
+</div>
+<!-- Message Field -->
+<div>
+<label class="block font-label-caps text-label-caps uppercase text-secondary mb-1" for="project-details">Project Objective &amp; Timeline</label>
+<textarea class="w-full bg-surface-container px-space-md py-space-sm rounded font-body-md text-on-surface placeholder:text-secondary-fixed-dim/40 focus:outline-none focus:ring-1 focus:ring-primary-container" id="project-details" placeholder="Briefly describe the vision, desired delivery date, and technical delivery targets..." required="" rows="4"></textarea>
+</div>
+<!-- Submit Button -->
+<button class="w-full py-space-md rounded bg-primary-container text-on-primary-container font-label-caps text-label-caps uppercase font-bold tracking-widest hover:bg-tertiary-container transition-all flex items-center justify-center gap-space-sm shadow-[0_0_24px_rgba(255,86,44,0.4)]" type="submit">
+<span>Transmit Project Inquiry</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- 08. CLOCKS & MINIMAL FOOTER SUB-BAR -->
+<section class="w-full py-space-lg px-margin-mobile md:px-margin bg-surface-container-lowest">
+<div class="max-w-[1600px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-space-md font-technical-code text-technical-code text-secondary">
+<div class="flex items-center gap-space-lg">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span>KOCHI (IST): <strong class="text-on-surface" id="kochi-time">19:42</strong></span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>DUBAI (GST): <strong class="text-on-surface" id="dubai-time">18:12</strong></span>
+</div>
+</div>
+<button class="flex items-center gap-1 text-secondary hover:text-primary-container transition-colors uppercase font-label-caps text-label-caps" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" type="button">
+<span>Back to Summit</span>
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+</button>
+</div>
+</section>
+<!-- Interactive Filter & Dynamic Clock Behavior -->
+<script>
+    // Portfolio Filtering logic
+    const filterButtons = document.querySelectorAll('#portfolio-filter .filter-btn');
+    const projectCards = document.querySelectorAll('#work [data-category]');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-primary-container', 'text-on-primary-container');
+          b.classList.add('text-secondary');
+        });
+        btn.classList.add('bg-primary-container', 'text-on-primary-container');
+        btn.classList.remove('text-secondary');
+
+        const filter = btn.getAttribute('data-filter');
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Real-time Dynamic Clocks for Kochi & Dubai
+    function updateClocks() {
+      const now = new Date();
+      const kochiEl = document.getElementById('kochi-time');
+      const dubaiEl = document.getElementById('dubai-time');
+
+      if (kochiEl && dubaiEl) {
+        kochiEl.textContent = new Intl.DateTimeFormat('en-GB', {
+          timeZone: 'Asia/Kolkata',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
+        }).format(now);
+
+        dubaiEl.textContent = new Intl.DateTimeFormat('en-GB', {
+          timeZone: 'Asia/Dubai',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
+        }).format(now);
+      }
+    }
+    updateClocks();
+    setInterval(updateClocks, 1000);
+  </script>
+</div></main><aside class="fixed bottom-space-lg right-space-lg z-40 flex items-center gap-space-xs p-1.5 rounded-full bg-surface-container/90 backdrop-blur-md shadow-[0_12px_32px_rgba(0,0,0,0.8)]"><button aria-label="Toggle Ambient Sound" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">graphic_eq</span></button><div class="h-4 w-[1px] bg-surface-container-highest"></div><a class="px-space-sm py-1 font-technical-code text-technical-code text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 uppercase transition-colors" href="#showreel"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>Directorial Cut</a></aside><footer class="w-full bg-surface-container-lowest py-space-2xl"><div class="w-full px-margin-mobile md:px-margin flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">RINSHAAN</span><span class="font-technical-code text-technical-code text-secondary-fixed-dim">© 2025 ALL RIGHTS RESERVED</span></div><div class="font-technical-code text-technical-code text-secondary flex items-center gap-space-lg"><span>4K UHD / 2.39:1 CINEMATIC</span><span>DIR • COLOR • VFX</span></div><div class="flex items-center gap-space-md"><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary transition-colors" href="#work">Archive</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary transition-colors" href="#contact">Bookings</a></div></div></footer></body></html>

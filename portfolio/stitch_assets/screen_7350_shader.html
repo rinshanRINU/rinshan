@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+<!-- STITCH_SHADER_START:ANIMATION_7 class="fixed inset-0 w-full h-full" -->
+<div class="fixed inset-0 w-full h-full" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_7" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_7');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+// Simplex/Hash noise helpers
+float hash(vec2 p) {
+    p = fract(p * vec2(123.34, 456.21));
+    p += dot(p, p + 45.32);
+    return fract(p.x * p.y);
+}
+
+float noise(vec2 p) {
+    vec2 i = floor(p);
+    vec2 f = fract(p);
+    f = f * f * (3.0 - 2.0 * f);
+    float a = hash(i);
+    float b = hash(i + vec2(1.0, 0.0));
+    float c = hash(i + vec2(0.0, 1.0));
+    float d = hash(i + vec2(1.0, 1.0));
+    return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+}
+
+// Fractional Brownian Motion for atmospheric dark fluid mist
+float fbm(vec2 p) {
+    float v = 0.0;
+    float a = 0.5;
+    vec2 shift = vec2(100.0);
+    mat2 rot = mat2(cos(0.5), sin(0.5), -sin(0.5), cos(0.5));
+    for (int i = 0; i < 4; ++i) {
+        v += a * noise(p);
+        p = rot * p * 2.0 + shift;
+        a *= 0.5;
+    }
+    return v;
+}
+
+void main() {
+    vec2 st = gl_FragCoord.xy / u_resolution.xy;
+    vec2 uv = (gl_FragCoord.xy - 0.5 * u_resolution.xy) / min(u_resolution.x, u_resolution.y);
+    
+    // Normalized mouse with smooth fallback to center if zero
+    vec2 mouse = u_mouse / u_resolution.xy;
+    if (length(u_mouse) < 1.0) {
+        mouse = vec2(0.5, 0.5);
+    }
+    vec2 mouseUv = (u_mouse - 0.5 * u_resolution.xy) / min(u_resolution.x, u_resolution.y);
+
+    // Mouse distance & reactive influence
+    float distMouse = length(uv - mouseUv);
+    float mouseGlow = smoothstep(0.7, 0.0, distMouse);
+    float mouseWave = sin(distMouse * 18.0 - u_time * 2.5) * 0.03 * mouseGlow;
+
+    // Organic atmospheric movement
+    vec2 moveUv = uv + vec2(mouseWave);
+    float timeSlow = u_time * 0.15;
+    
+    // Layered fbm smoke / kinetic mist
+    float n1 = fbm(moveUv * 2.2 + vec2(timeSlow * 0.4, -timeSlow * 0.2));
+    float n2 = fbm(moveUv * 4.0 - vec2(timeSlow * 0.6, timeSlow * 0.3) + vec2(n1 * 1.2));
+    
+    // Floating cinematic micro-dust / particles
+    float particles = 0.0;
+    for (int i = 0; i < 3; i++) {
+        float fi = float(i);
+        vec2 pGrid = uv * (14.0 + fi * 8.0) + vec2(sin(u_time * 0.3 + fi), cos(u_time * 0.25 + fi * 1.5));
+        vec2 id = floor(pGrid);
+        vec2 gv = fract(pGrid) - 0.5;
+        
+        float h = hash(id + fi * 31.7);
+        if (h > 0.68) {
+            float sparkDist = length(gv);
+            float spark = smoothstep(0.12, 0.01, sparkDist);
+            // Twinkle & fade
+            float pulse = sin(u_time * 2.0 + h * 6.28) * 0.5 + 0.5;
+            particles += spark * pulse * (0.4 + 0.6 * mouseGlow);
+        }
+    }
+
+    // High frequency film grain / analog sensor noise
+    float grain = (hash(st * 450.0 + fract(u_time * 12.0)) - 0.5) * 0.06;
+
+    // Palette: Deep obsidian cinema black + electric orange (#FF4D1F) accents
+    vec3 colBase = vec3(0.039, 0.039, 0.043); // #0A0A0B deep black
+    vec3 colDeepMist = vec3(0.08, 0.04, 0.02); // warm shadow
+    vec3 colAccent = vec3(1.0, 0.302, 0.122); // #FF4D1F electric orange
+    vec3 colAmberLight = vec3(1.0, 0.55, 0.25); // amber highlight
+
+    // Build layered composition
+    vec3 color = colBase;
+    color = mix(color, colDeepMist, n1 * 0.85);
+    
+    // Mouse interactive volumetric torch / anamorphic spill
+    float orangeEnergy = (pow(mouseGlow, 1.8) * 0.55) + (n2 * mouseGlow * 0.4);
+    color += colAccent * orangeEnergy;
+
+    // Ambient subtle rim light from bottom left to top right
+    float diagonalSweep = smoothstep(-0.5, 0.8, uv.x + uv.y);
+    color += colAccent * (n1 * 0.12 * diagonalSweep);
+
+    // Particle embers glow
+    color += colAmberLight * particles * 0.85;
+
+    // Subtle edge vignette
+    float vignette = 1.0 - smoothstep(0.4, 1.4, length(uv));
+    color *= vignette;
+
+    // Analog 35mm grain overlay
+    color += grain;
+
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_7 -->
+</body>
+</html>
